@@ -1,26 +1,23 @@
 <!-- CardInput.vue -->
 <script setup lang="ts">
-
-const props = defineProps({
-    items: {
-        type: Array<Object <any>>,
-        required: true
+ const props= defineProps({
+    placeholder:{
+        type:String,
     }
-})
-
-const vModelValue = defineModel()
-
+ })
+const title = defineModel('text')
 </script>
 <template>
-    <div class="card" v-for="(item, index) in items" :key="index">
+    <div class="card">
         <input 
             type="text" 
-            v-model="titles[index]" 
+            v-model="title"
             class="mt-3 focus:ring-2 border border-blue-700 rounded-lg px-3 py-3" 
-            placeholder="Enter title"
+           :placeholder="placeholder"
         />
         <br>
     </div>
+    <h1 class="text-xl ">{{ title }}</h1>
 </template>
 
         
