@@ -1,0 +1,4 @@
+v-for="option in options"
+      :key="option.value"
+      :class="['option-item', { selected: option.value === selectedOption }]"
+      @click="selectOption(option.value)"
