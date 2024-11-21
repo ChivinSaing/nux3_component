@@ -14,20 +14,15 @@ const product = ref({
 
 const onSubmit = async () => {
     try {
-    // Send product data to the backend API
     const response = await useFetch("/api/posts", {
       method: "POST",
       body: product.value,
     });
-
     console.log("Add Data Success...",response);
-    
   } catch (error) {
     console.error("Error submitting product data:", error);
     alert("Failed to submit product data.");
   }
-    
-            
 }
 const { data: posts, error }: any = await useFetch('/api/posts')
 console.log(posts);
@@ -59,15 +54,15 @@ console.log(posts);
     <div class="container">
         <h1 v-if="error">Fetch Error{{ error }}</h1>
         <div class="px-10 flex justify-center">
-            <table class="border-1 border-red-400 border-t-2  text-center">
+            <table class="border-1 border-red-400 border-t-2 text-center">
                 <thead>
-                    <tr class="">
+                    <tr class=" border-b-2 border-red-400 border-1">
                         <th class="px-10 py-2 text-xl">Name</th>
                         <th class="px-10 py-2 text-xl">QTY</th>
                         <th class="px-10 py-2 text-xl">Price</th>
                     </tr>
                 </thead>
-                <tbody v-if="posts">
+                <tbody v-if="posts" class="">
                     <tr  v-for="(item, key) in posts" :key="key">
                         <td class="px-10 py-2 text-xl">{{ item.name }}</td>
                         <td class="px-10 py-2 text-xl">{{ item.qty }}</td>

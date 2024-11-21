@@ -11,20 +11,19 @@ export default defineEventHandler(async (event) => {
       name : body.name,
       price: body.price,
       qty  : body.qty,
-     
+    
     });
 
-    // Save the new product to the database
+     // Save the new product to the database
     const result = await newpostModel.save();
 
-    return {
+    return{ 
       success: true,
       message: "Product successfully added!",
       data: result,
     };
   } catch (error) {
     console.error("Error adding product:", error);
-
     return {
       success: false,
       message: "Failed to add product.",
