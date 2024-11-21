@@ -5,19 +5,19 @@
         type:String,
     }
  })
-const title = defineModel('text')
+const title = defineModel()
 </script>
 <template>
     <div class="card">
         <input 
             type="text" 
             v-model="title"
-            class="mt-3 focus:ring-2 border border-blue-700 rounded-lg px-3 py-3" 
-           :placeholder="placeholder"
+            class="mt-3 focus:ring-2 border border-blue-700 rounded-lg px-3 py-3 w-full" 
+           :placeholder="props.placeholder"
         />
         <br>
     </div>
-    <h1 class="text-xl ">{{ title }}</h1>
+    <!-- <h1 class="text-xl ">{{ title }}</h1> -->
 </template>
 
         
