@@ -13,7 +13,20 @@ const product = ref({
 // const id = ref('')
 
 const onSubmit = async () => {
-    alert(`${product.value.id},`)
+    try {
+    // Send product data to the backend API
+    const response = await useFetch("/api/posts", {
+      method: "POST",
+      body: product.value,
+    });
+
+    console.log("Add Data Success...",response);
+    
+  } catch (error) {
+    console.error("Error submitting product data:", error);
+    alert("Failed to submit product data.");
+  }
+    
             
 }
 const { data: posts, error }: any = await useFetch('/api/posts')

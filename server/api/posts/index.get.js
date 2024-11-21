@@ -1,3 +1,4 @@
+// server/api/posts/index.get.js
 import postModel from "~/server/model/Post";
 
 export default defineEventHandler(async () => {
