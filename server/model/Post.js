@@ -19,7 +19,8 @@ const postSchema=new mongoose.Schema({
         type:Number,
         required:true,
         trim:true
-    }
+    },
+
 })
 
 //  Compiling Schema

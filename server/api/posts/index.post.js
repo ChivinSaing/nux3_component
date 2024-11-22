@@ -11,10 +11,11 @@ export default defineEventHandler(async (event) => {
       name : body.name,
       price: body.price,
       qty  : body.qty,
+      // total: body.total
     
     });
 
-     // Save the new product to the database
+    // Save the new product to the database
     const result = await newpostModel.save();
 
     return{ 
